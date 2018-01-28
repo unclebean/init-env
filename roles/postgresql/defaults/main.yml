@@ -1,0 +1,4 @@
+postgresql:
+  max_connections: '100'
+  shared_buffers: '32MB'
+  effective_cache_size: '512MB'

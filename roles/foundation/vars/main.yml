@@ -1,0 +1,22 @@
+UBUNTU_COMMON_ROOT_PASSWORD: '$6$rounds=656000$uRMrzBeIvoqHWknF$Bxw//kjYdwWwzaXSraJ.KbOywuqqAMJ/dwzbKS9gOfetpefqW9f9CqHJ5DlN0Zr1oHQ42cVsrms8Im4eg2j371'
+UBUNTU_COMMON_DEPLOY_PASSWORD: '$6$rounds=656000$uRMrzBeIvoqHWknF$Bxw//kjYdwWwzaXSraJ.KbOywuqqAMJ/dwzbKS9gOfetpefqW9f9CqHJ5DlN0Zr1oHQ42cVsrms8Im4eg2j371'
+ubuntu_common_deploy_user_name: deploy
+ubuntu_common_deploy_public_keys:
+    - ~/.ssh/unclebean_rsa.pub
+
+ubuntu_common_required_packages:
+    - ufw
+    - fail2ban
+    - unattended-upgrades
+    - logwatch
+    - zip
+    - unzip
+
+ubuntu_common_optional_packages:
+    - mosh
+    - vim
+    - tmux
+
+ubuntu_common_ssh_port: 22
+ubuntu_common_mosh_from_port: 60000
+ubuntu_common_mosh_to_port: 60010

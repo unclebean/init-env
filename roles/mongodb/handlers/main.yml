@@ -1,0 +1,4 @@
+- name: enable mongodb service
+  shell: systemctl enable mongodb
+  args:
+    executable: /bin/bash

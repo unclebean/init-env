@@ -1,0 +1,6 @@
+Host klm
+  HostName 192.168.55.55
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  IdentityFile .vagrant/machines/klm/virtualbox/private_key
+  User ubuntu

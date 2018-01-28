@@ -1,0 +1,41 @@
+- name: update from keyserver
+  apt_key: keyserver=keyserver.ubuntu.com id=EA312927
+
+- name: create a list file for MongoDB
+  shell: echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+- name: ensure apt cache is up to date
+  apt: update_cache=yes
+
+- name: install mongo
+  apt: name=mongodb-org=3.2.8
+
+- name: install mongod
+  apt: name=mongodb-org-server=3.2.8
+
+- name: install mongos
+  apt: name=mongodb-org-shell=3.2.8
+
+- name: install mongot
+  apt: name=mongodb-org-tools=3.2.8
+
+- name: copy mongod.conf
+  copy: src=mongod.conf dest=/etc/mongod.conf
+
+- name: copy mongod.service
+  copy: src=mongodb.service dest=/etc/systemd/system/mongodb.service
+
+- name: create mongodb service
+  shell: systemctl start mongodb
+  args:
+    executable: /bin/bash
+  notify:
+    - enable mongodb service
+
+- name: export LC_ALL
+  shell: echo LC_ALL is $LC_ALL
+  environment:
+    LC_ALL: C
+
+- name: allow port
+  ufw: rule=allow port=21077

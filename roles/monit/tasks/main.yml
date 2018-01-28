@@ -1,0 +1,6 @@
+---
+  
+- name: install monit
+  apt: name=monit update_cache=yes
+  notify:
+    - start monit

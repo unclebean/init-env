@@ -1,23 +1,23 @@
 - name: update from keyserver
-  apt_key: keyserver=keyserver.ubuntu.com id=EA312927
+  apt_key: keyserver=keyserver.ubuntu.com id=2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
 
 - name: create a list file for MongoDB
-  shell: echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+  shell: echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 
 - name: ensure apt cache is up to date
   apt: update_cache=yes
 
 - name: install mongo
-  apt: name=mongodb-org=3.2.8
+  apt: name=mongodb-org=3.6.2
 
 - name: install mongod
-  apt: name=mongodb-org-server=3.2.8
+  apt: name=mongodb-org-server=3.6.2
 
 - name: install mongos
-  apt: name=mongodb-org-shell=3.2.8
+  apt: name=mongodb-org-shell=3.6.2
 
 - name: install mongot
-  apt: name=mongodb-org-tools=3.2.8
+  apt: name=mongodb-org-tools=3.6.2
 
 - name: copy mongod.conf
   copy: src=mongod.conf dest=/etc/mongod.conf

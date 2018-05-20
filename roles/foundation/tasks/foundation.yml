@@ -10,6 +10,11 @@
 - name: Add deploy user
   user: name={{ ubuntu_common_deploy_user_name }} password="{{ UBUNTU_COMMON_DEPLOY_PASSWORD }}" shell=/bin/bash
 
+- name: Clean authorized keys
+  file:
+    path: "{{ authorized_keys_path }}"
+    state: absent
+
 - name: Add authorized keys for deploy user
   authorized_key: user={{ ubuntu_common_deploy_user_name }} key="{{ lookup('file', item) }}"
   with_items: "{{ubuntu_common_deploy_public_keys}}"
@@ -27,11 +32,11 @@
   apt: upgrade=safe
 
 - name: Install required packages
-  apt: state=installed pkg={{ item }}
+  apt: state=present pkg={{ item }}
   with_items: "{{ubuntu_common_required_packages}}"
 
 - name: Install optional packages
-  apt: state=installed pkg={{ item }}
+  apt: state=present pkg={{ item }}
   with_items: "{{ubuntu_common_optional_packages}}"
 
 - name: Adjust APT update intervals

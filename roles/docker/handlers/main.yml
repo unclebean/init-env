@@ -1,0 +1,4 @@
+- name: enable docker service
+  shell: systemctl enable docker
+  args:
+    executable: /bin/bash

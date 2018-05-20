@@ -1,4 +1,4 @@
 staging       ansible_host=192.168.55.55
 
-[app]
+[all]
 staging

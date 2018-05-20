@@ -1,2 +1,21 @@
 ---
-- include: foundation.yml
+- name: Include foundation
+  import_playbook: foundation.yml
+
+- name: Include jvm
+  import_playbook: jvm.yml
+
+- name: Include nodejs
+  import_playbook: nodejs.yml
+
+- name: Include nginx
+  import_playbook: nginx.yml
+
+- name: Include postgres
+  import_playbook: postgres.yml
+
+- name: Include mongo
+  import_playbook: mongo.yml
+
+- name: Include docker
+  import_playbook: docker.yml

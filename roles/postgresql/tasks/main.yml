@@ -1,6 +1,6 @@
 ---
 - name: install latest postgresql server
-  apt: pkg=postgresql-{{postgresql_version}} state=installed
+  apt: pkg=postgresql-{{postgresql_version}} state=present
 
 - name: install postgresql library
   apt: name={{item}}

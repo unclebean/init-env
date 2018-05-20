@@ -1,4 +1,21 @@
-[playground]
+[all:vars]
+ansible_become_pass='{{ sudo_pass }}'
+ 
+[foundation]
 playground
 
+[jvm]
+playground
+
+[nginx]
+playground
+
+[nodejs]
+playground
+
+[mongo]
+playground
+
+[docker]
+playground
 

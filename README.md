@@ -39,7 +39,7 @@ Split dev & prod inventories for local testing & setup env on real server.
     
     ```
         pip install passlib
-        python -c "from passlib.hash import sha512_crypt; print sha512_crypt.encrypt('your password')"
+        python -c "from passlib.hash import sha512_crypt; print(sha512_crypt.encrypt('your password'))"
     ````
 2. monit
     for monitor service status

@@ -1,0 +1,10 @@
+---
+- name: install docker
+  apt: name=docker.io state=latest update-cache=yes force=yes
+
+- name: create docker service
+  shell: systemctl start docker
+  args:
+    executable: /bin/bash
+  notify:
+    - enable docker service

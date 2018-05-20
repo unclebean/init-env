@@ -1,0 +1,5 @@
+- hosts: nodejs 
+  gather_facts: false
+  roles:
+    - role: nodejs
+      become: true

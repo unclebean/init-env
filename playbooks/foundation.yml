@@ -1,16 +1,7 @@
-- hosts: all
+- hosts: foundation 
   gather_facts: false
   roles:
     - role: foundation
       become: true
     - role: monit
       become: true
-    - role: nodejs
-      become: true
-    - role: java
-      become: true
-    - role: clojure
-      become: true
-    - role: nginx
-      become: true
-    

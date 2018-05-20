@@ -1,0 +1,5 @@
+- hosts: mongo 
+  gather_facts: false
+  roles:
+    - role: mongodb
+      become: true

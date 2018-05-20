@@ -1,3 +1,5 @@
 .DS_Store
 .vagrant
 *.log
+vault.txt
+unclebean_rsa.pub

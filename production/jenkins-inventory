@@ -2,4 +2,4 @@
 ansible_become_pass='{{ sudo_pass }}'
 
 [jenkins]
-playground
+ace

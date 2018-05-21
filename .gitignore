@@ -3,3 +3,5 @@
 *.log
 vault.txt
 unclebean_rsa.pub
+config
+developer_rsa

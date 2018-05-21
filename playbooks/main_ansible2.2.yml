@@ -1,0 +1,10 @@
+---
+- include: foundation.yml
+- include: jvm.yml
+- include: nodejs.yml
+- include: nginx.yml
+- include: postgres.yml
+- include: mongo.yml
+- include: ports.yml
+- include: docker.yml
+- include: jenkins.yml

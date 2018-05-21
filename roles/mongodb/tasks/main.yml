@@ -8,16 +8,16 @@
   apt: update_cache=yes
 
 - name: install mongo
-  apt: name=mongodb-org=3.6.2
+  apt: name=mongodb-org
 
 - name: install mongod
-  apt: name=mongodb-org-server=3.6.2
+  apt: name=mongodb-org-server
 
 - name: install mongos
-  apt: name=mongodb-org-shell=3.6.2
+  apt: name=mongodb-org-shell
 
 - name: install mongot
-  apt: name=mongodb-org-tools=3.6.2
+  apt: name=mongodb-org-tools
 
 - name: copy mongod.conf
   copy: src=mongod.conf dest=/etc/mongod.conf

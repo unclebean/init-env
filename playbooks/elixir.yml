@@ -1,0 +1,5 @@
+- hosts: elixir
+  gather_facts: false
+  roles:
+    - role: elixir
+      become: true

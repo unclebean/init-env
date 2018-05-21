@@ -1,0 +1,19 @@
+---
+
+- name: Add Erlang Solutions repo
+  get_url:
+    url: https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
+    dest: /temp
+  command: dpkg -i erlang-solutions_1.0_all.deb
+  args:
+    chdir: /temp
+
+- name: Upgrade APT to the latest packages
+  apt: upgrade=safe
+
+- name: Install erlang
+  raw: apt-get install esl-erlang -y
+
+- name: Install elixir
+  raw: apt-get install elixir -y
+

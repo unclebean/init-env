@@ -8,3 +8,4 @@
 - include: ports.yml
 - include: docker.yml
 - include: jenkins.yml
+- include: elixir.yml

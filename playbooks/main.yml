@@ -25,3 +25,6 @@
 
 - name: Include jenkins
   import_playbook: jenkins.yml
+
+- name: Include elixir
+  import_playbook: elixir.yml

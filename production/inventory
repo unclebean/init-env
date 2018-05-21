@@ -21,3 +21,6 @@ ansible_become_pass='{{ sudo_pass }}'
 
 [manageports]
 128.199.89.76
+
+[elixir]
+128.199.89.76

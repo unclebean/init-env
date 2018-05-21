@@ -11,6 +11,7 @@ RUN apt-get install -y ansible
 RUN mkdir -p /home/jenkins/.ssh
 COPY config /home/jenkins/.ssh/config
 COPY developer_rsa /home/jenkins/.ssh/developer_rsa
+COPY developer_rsa.pub /home/jenkins/.ssh/developer_rsa.pub
 
 USER jenkins
 VOLUME ["/var/jenkins_home"]

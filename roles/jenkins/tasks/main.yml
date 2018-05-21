@@ -12,6 +12,7 @@
     - "run_jenkins.sh"
     - "config"
     - "developer_rsa"
+    - "developer_rsa.pub"
 
 - name: Add user in docker group
   command: groupadd docker

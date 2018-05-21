@@ -5,3 +5,4 @@ vault.txt
 unclebean_rsa.pub
 config
 developer_rsa
+roles/jenkins/files/developer_rsa.pub

@@ -25,5 +25,8 @@ RUN boot
 USER jenkins
 VOLUME ["/var/jenkins_home"]
 
+ENV JAVA_OPTS="-Xmx640m"
+ENV JENKINS_OPTS="--handlerCountStartup=100 --handlerCountMax=300"
+
 EXPOSE 8080
 EXPOSE 50000

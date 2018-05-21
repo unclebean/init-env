@@ -1,0 +1,5 @@
+- hosts: jenkins 
+  gather_facts: false
+  roles:
+    - role: jenkins
+      become: true

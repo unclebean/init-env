@@ -1,0 +1,5 @@
+- hosts: manageports 
+  gather_facts: false
+  roles:
+    - role: manageports
+      become: true

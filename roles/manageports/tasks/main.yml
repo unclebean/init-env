@@ -1,0 +1,9 @@
+---
+
+- name: Allow tcp ports
+  ufw: rule=allow port={{ item }} proto=tcp
+  with_items: "{{allow_ports}}"
+
+- name: Deny tcp ports
+  ufw: rule=deny port={{ item }} proto=tcp
+  with_items: "{{deny_ports}}"

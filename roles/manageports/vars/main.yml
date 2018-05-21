@@ -1,0 +1,5 @@
+allow_ports:
+  - 8080
+
+deny_ports:
+  - 5000

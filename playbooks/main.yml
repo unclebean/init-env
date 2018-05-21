@@ -19,3 +19,9 @@
 
 - name: Include docker
   import_playbook: docker.yml
+
+- name: Include port manager
+  import_playbook: ports.yml
+
+- name: Include jenkins
+  import_playbook: jenkins.yml

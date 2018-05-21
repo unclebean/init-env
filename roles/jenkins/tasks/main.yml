@@ -1,0 +1,40 @@
+---
+
+- name: Create jenkins directory
+  file: path=/var/jenkins state=directory
+  file: path=/var/jenkins/jenkins_home state=directory
+
+- name: Copy jenkins docker config file to directory
+  copy: src={{ item }} dest=/var/jenkins/{{ item }}
+  with_items: 
+    - "Dockerfile"
+    - "plugins.txt"
+    - "run_jenkins.sh"
+
+- name: Add user in docker group
+  command: groupadd docker
+  command: usermod -a -G docker $USER
+  command: service docker restart
+  command: chown -R 1000:1000 /var/jenkins/jenkins_home
+
+- name: Change shell runable
+  file: dest=/var/jenkins/run_jenkins.sh mode=a+x
+
+- name: Build docker image
+  command: docker build -t newgate-jenkins .
+  args:
+    chdir: /var/jenkins/ 
+
+- name: Stop jenkins server
+  command: docker stop jenkins
+  ignore_errors: yes
+
+- name: Remove jenkins contain
+  command: docker rm jenkins
+  ignore_errors: yes
+
+- name: Start jenkins server
+  command: /var/jenkins/run_jenkins.sh >> jenkins_run.log
+  args:
+    chdir: /var/jenkins/
+

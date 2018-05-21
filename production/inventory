@@ -2,20 +2,24 @@
 ansible_become_pass='{{ sudo_pass }}'
  
 [foundation]
-playground
+206.189.145.70
 
 [jvm]
-playground
+206.189.145.70
 
 [nginx]
-playground
+206.189.145.70
 
 [nodejs]
-playground
+206.189.145.70
 
 [mongo]
-playground
+206.189.145.70
 
 [docker]
-playground
+206.189.145.70
+
+[manageports]
+206.189.145.70
+
 

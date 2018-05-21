@@ -14,8 +14,8 @@
   apt: upgrade=safe
 
 - name: Install erlang
-  raw: apt-get install esl-erlang -y
+  apt: name=esl-erlang state=present
 
 - name: Install elixir
-  raw: apt-get install elixir -y
+  apt: name=elixir state=present
 

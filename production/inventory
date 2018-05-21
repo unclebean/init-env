@@ -2,22 +2,22 @@
 ansible_become_pass='{{ sudo_pass }}'
  
 [foundation]
-ace
+206.189.145.70
 
 [jvm]
-ace
+206.189.145.70
 
 [nginx]
-ace
+206.189.145.70
 
 [nodejs]
-ace
+206.189.145.70
 
 [mongo]
-ace
+206.189.145.70
 
 [docker]
-ace
+206.189.145.70
 
 [manageports]
-ace
+206.189.145.70

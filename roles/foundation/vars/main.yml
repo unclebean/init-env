@@ -2,7 +2,7 @@ UBUNTU_COMMON_ROOT_PASSWORD: '{{ hash_sudo_pass }}'
 UBUNTU_COMMON_DEPLOY_PASSWORD: '{{ hash_sudo_pass }}'
 ubuntu_common_deploy_user_name: deploy
 ubuntu_common_deploy_public_keys:
-    - ../public_keys/unclebean_rsa.pub
+    # - ../public_keys/unclebean_rsa.pub
     - ../public_keys/developer_rsa.pub
 
 ubuntu_common_required_packages:

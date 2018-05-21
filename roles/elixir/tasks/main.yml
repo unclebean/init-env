@@ -3,12 +3,12 @@
 - name: Download Erlang Solutions repo
   get_url:
     url: https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
-    dest: /temp
+    dest: /tmp
 
 - name: Add Erlang Solutions repo 
   command: dpkg -i erlang-solutions_1.0_all.deb
   args:
-    chdir: /temp
+    chdir: /tmp
 
 - name: Upgrade APT to the latest packages
   apt: upgrade=safe

@@ -1,4 +1,25 @@
 staging       ansible_host=192.168.55.55
 
-[all]
+[foundation]
+staging
+
+[jvm]
+staging
+
+[nginx]
+staging
+
+[nodejs]
+staging
+
+[mongo]
+staging
+
+[docker]
+staging
+
+[manageports]
+staging
+
+[elixir]
 staging

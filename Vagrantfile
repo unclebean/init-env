@@ -24,6 +24,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "./playbooks/main.yml"
     ansible.inventory_path = "dev"
+    ansible.extra_vars = "@secrets/passwd.yml"
+    ansible.ask_vault_pass = true
   end
 
   # Disable automatic box update checking. If you disable this, then

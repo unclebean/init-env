@@ -1,22 +1,23 @@
 #### briefly introduce
-no matter your use digital ocean, aws,linode. If you want to deploy your code to your server, you have to install all dependencies and think about security, monitor, log ... etc
+no matter your use digital ocean, aws,linode. If you want to deploy your code to server, you have to install all dependencies and think about security, monitor, log ... etc
 so this ansible project want to handle these things.
 #### dev & prod
-    
+#### Warning!
+#### **please create a new passwd.yml through ansible-vault command, before executing any ansible task when you don't know the password.**
 ****
 Split dev & prod inventories for local testing & setup env on real server.
 ****
 
 ***runing dev***
 ``` 
-./setup_dev.sh  #Using vagrant for local testing
+./bin/setup_dev.sh  #Using vagrant for local testing
 ```
 
 ***runing prod***
 >declare your server in production/inventory
 
 ```
-./setup_prod.sh  #Inside this shell you ***must*** change private key to match your deploy user's public key
+./bin/setup_prod.sh  #Inside this shell you ***must*** change private key to match your deploy user's public key meanwhile need to input vault password.
 ```
 
 #### roles
@@ -41,6 +42,11 @@ Split dev & prod inventories for local testing & setup env on real server.
         pip install passlib
         python -c "from passlib.hash import sha512_crypt; print(sha512_crypt.encrypt('your password'))"
     ````
+    ***add public key***
+    1) put public key into roles/foundation/public_keys folder
+    2) add new key in roles/foudation/vars/main.yml
+    **ubuntu_common_deploy_public_key** list
+
 2. monit
     for monitor service status
 3. java
@@ -55,3 +61,7 @@ Split dev & prod inventories for local testing & setup env on real server.
     install postgres
 8. clojure
     install lein
+9. docker
+    install docker
+10. elixir
+    install elixir

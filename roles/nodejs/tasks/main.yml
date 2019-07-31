@@ -1,11 +1,11 @@
 - name: load node source
   get_url:
-    url=https://deb.nodesource.com/setup_8.x
-    dest=/tmp/nodejs_setup_8.x
+    url=https://deb.nodesource.com/setup_10.x
+    dest=/tmp/nodejs_setup_10.x
     mode=755
 
 - name: execute nodejs shell
-  shell: /tmp/nodejs_setup_8.x
+  shell: /tmp/nodejs_setup_10.x
   args:
     executable: /bin/bash
 

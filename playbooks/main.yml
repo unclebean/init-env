@@ -2,8 +2,8 @@
 - name: Include foundation
   import_playbook: foundation.yml
 
-- name: Include jvm
-  import_playbook: jvm.yml
+# - name: Include jvm
+  # import_playbook: jvm.yml
 
 - name: Include nodejs
   import_playbook: nodejs.yml
